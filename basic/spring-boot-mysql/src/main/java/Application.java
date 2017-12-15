@@ -30,6 +30,11 @@ public class Application {
     @RequestMapping("/all")
 	public @ResponseBody Iterable<Store> getAllStores() {
 		return storeRepository.findAll();
+    }
+    
+    @RequestMapping("/all2")
+	public Iterable<Store> getAllStores2() {
+		return storeRepository.findAll();
 	}
 
     @RequestMapping("/1")
