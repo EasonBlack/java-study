@@ -13,6 +13,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.*;
+import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 @SpringBootApplication
 @RestController
 public class Application {
@@ -46,6 +52,24 @@ public class Application {
     @RequestMapping(value="/posttest2", method = RequestMethod.POST)  
     public String getPost(@RequestBody PostModel2 pm) {
         return pm.name + " " + pm.num  + " !!" ;
+    }
+
+    @RequestMapping(value="/postjson", method = RequestMethod.POST)  
+    public JSONObject  getJsonString(@RequestBody String stringToParse) {
+        JSONParser parser = new JSONParser();
+        JSONObject json = null;
+        try {
+            json = (JSONObject) parser.parse(stringToParse);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return json;
+    }
+
+    @RequestMapping(value="/postmap", method = RequestMethod.POST)  
+    public String  getJsonString(@RequestBody Map<String, String> payload) {
+        String jsonText = JSONValue.toJSONString(payload);
+        return jsonText;
     }
 
 
