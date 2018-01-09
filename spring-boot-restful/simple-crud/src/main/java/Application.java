@@ -14,17 +14,21 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.eason.User;
 import com.eason.UserRepository;
+import com.eason.service.impl.TestServiceImpl;
 
 @SpringBootApplication
 @RestController
 public class Application {
+
+    private TestServiceImpl testService;
 
     @Autowired
     private UserRepository userRepository;
 
     @RequestMapping("/")
     public String greeting() {
-        return "Hello World!";
+        // String a = testService.TestA("xxxx");
+        return "Hello World!" ;
     }
 
     @RequestMapping(value="/user/{userName}/{userNum}")  
