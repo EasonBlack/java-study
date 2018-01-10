@@ -1,0 +1,4 @@
+如果换成
+@Autowired
+private IDuck duckRepository;
+则会对应IDuckImpl.java
