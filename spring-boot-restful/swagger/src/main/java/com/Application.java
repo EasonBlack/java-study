@@ -13,17 +13,22 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
 
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.beans.factory.annotation.Value;
 
-
+@PropertySource("classpath:application-default.properties")
 @SpringBootApplication
 @RestController
 public class Application {
+
+    @Value("${test.name}")
+	private String testName;
 
     @ApiOperation(value="get books", notes="get book list")
     @RequestMapping(value={"/book"}, method= RequestMethod.GET)
     public String getBook() {
         
-        return "Test";
+        return "Test" + testName;
     }
 
 

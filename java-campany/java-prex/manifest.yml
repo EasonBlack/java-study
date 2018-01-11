@@ -1,0 +1,12 @@
+---
+applications:
+  - name:  eason-java-demo
+    buildpack: java_buildpack
+    path: target/web-1.jar
+    memory: 512M
+    timeout : 180
+env:
+   SPRING_PROFILES_ACTIVE : cloud
+   MEMORY_LIMIT: 358M
+
+
