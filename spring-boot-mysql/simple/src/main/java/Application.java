@@ -40,8 +40,22 @@ public class Application {
 	public @ResponseBody Iterable<User> getAllUsers() {
 		return userRepository.findAll();
     }
-    
 
+    @RequestMapping("/userbyname")
+	public @ResponseBody Iterable<User> getUserByName(@RequestParam String name) {
+		return userRepository.findByName(name);
+    }
+
+    @RequestMapping("/userbyxxx")
+	public @ResponseBody Iterable<User> getUserByXXX() {
+		return userRepository.findUserByXXX();
+    }
+
+    @RequestMapping("/userbycus")
+	public @ResponseBody Iterable<User> getUserByCus(@RequestParam String name) {
+		return userRepository.findUserByCus(name);
+    }
+    
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
