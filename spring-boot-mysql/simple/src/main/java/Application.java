@@ -55,6 +55,11 @@ public class Application {
 	public @ResponseBody Iterable<User> getUserByCus(@RequestParam String name) {
 		return userRepository.findUserByCus(name);
     }
+
+    @RequestMapping("/userbynativequery")
+	public @ResponseBody Iterable<User> getUserByNativeQuery() {
+		return userRepository.findUserByNativeQuery();
+    }
     
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
