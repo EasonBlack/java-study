@@ -1,0 +1,19 @@
+localhost:9000/topics //get all topics include keyword
+localhost:9000/topics/1 //get all topics whose keywordId is 1
+
+post localhost:9000/topics  
+{
+    name: 'asdf',
+    keyword: {
+        id: 1
+    }
+}
+
+put localhost:9000/topics
+{
+    id: 4,
+    name: 'asdf',
+    keyword: {
+        id: 2
+    }
+}
