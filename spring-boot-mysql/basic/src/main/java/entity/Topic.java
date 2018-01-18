@@ -3,8 +3,10 @@ package com.eason.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.JoinColumn;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.FetchType;
 
 import com.eason.entity.Keyword;
 
@@ -15,7 +17,7 @@ public class Topic {
     private Long id;
 	private String name;
 	
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY)
 	private Keyword keyword;
 
 	public Topic() {
@@ -38,13 +40,13 @@ public class Topic {
 		this.name = name;
 	}
 
-	public Keyword getKeyword() {
-		return keyword;
-	}
+	// public Keyword getKeyword() {
+	// 	return keyword;
+	// }
 
-	public void setKeyword(Keyword keyword) {
-		this.keyword = keyword;
-	}
+	// public void setKeyword(Keyword keyword) {
+	// 	this.keyword = keyword;
+	// }
 
 
 }
