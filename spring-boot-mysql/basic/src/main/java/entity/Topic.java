@@ -7,10 +7,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.FetchType;
+import org.hibernate.envers.Audited;
+import org.hibernate.envers.RelationTargetAuditMode;
+
 
 import com.eason.entity.Keyword;
 
 @Entity 
+@Audited(targetAuditMode = RelationTargetAuditMode.NOT_AUDITED)
 public class Topic {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -44,9 +48,9 @@ public class Topic {
 	// 	return keyword;
 	// }
 
-	// public void setKeyword(Keyword keyword) {
-	// 	this.keyword = keyword;
-	// }
+	public void setKeyword(Keyword keyword) {
+		this.keyword = keyword;
+	}
 
 
 }
