@@ -1,0 +1,6 @@
+if you only want to put war to Tomcat
+mainClass is not necessary
+
+# can use tomcat7-maven-plugin
+# mvn install
+# mvn tomcat7:run
