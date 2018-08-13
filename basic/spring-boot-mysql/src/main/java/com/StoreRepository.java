@@ -1,8 +1,8 @@
-package com.eason;
+package com;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.eason.Store;
+import com.Store;
 
 // This will be AUTO IMPLEMENTED by Spring into a Bean called userRepository
 // CRUD refers Create, Read, Update, Delete

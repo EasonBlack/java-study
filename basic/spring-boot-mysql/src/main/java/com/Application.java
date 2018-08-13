@@ -1,4 +1,4 @@
-package com.eason;
+package com;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 
-import com.eason.Store;
-import com.eason.StoreRepository;
+import com.Store;
+import com.StoreRepository;
 
 @SpringBootApplication
 @RestController
