@@ -1,4 +1,4 @@
-package com.eason;
+package com;
 
 
 import org.springframework.boot.SpringApplication;
