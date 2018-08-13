@@ -1,4 +1,4 @@
-package com.eason;
+package com;
 
 public class PostModel {
 
